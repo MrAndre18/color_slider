@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <title>Color Slider App</title>
+  </head>
+  <body>
+    <section class="main">
+      <div class="slider">
+
+        <div class="slider__menu">
+          <div class="slider__menu-image">
+            <img src="./img/logo.svg" alt="Color Slider App logo" />
+          </div>
+          <ul class="slider__menu-items">
+            <li class="slider__menu-item slider__menu-item_active">
+              <button>Text</button>
+            </li>
+            <li class="slider__menu-item">
+              <button>Background</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="slider__content">
+          <div class="slider__header">
+            <h1 class="slider__header-title">Color Slider App</h1>
+          </div>
+
+          <div class="slider__content-block">
+            <ul class="slider__slides">
+              <li class="slider__slide">
+                <label for="red">Red</label>
+                <input id="red" type="range" min="0" max="255" value="0" />
+              </li>
+              <li class="slider__slide">
+                <label for="green">Green</label>
+                <input id="green" type="range" min="0" max="255" value="0" />
+              </li>
+              <li class="slider__slide">
+                <label for="blue">Blue</label>
+                <input id="blue" type="range" min="0" max="255" value="0" />
+              </li>
+            </ul>
+            <div class="slider__example">
+              <p class="slider__example-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adreprehenderit illum repudiandae natus voluptatem libero
+                impedit,maxime, quod temporibus sint possimus deleniti ut,
+                dolorumaccusantium. Tenetur, aliquam? Repellat, aperiam odio?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>

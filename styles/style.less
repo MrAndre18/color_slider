@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+button {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.main {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 16vh 0 0;
+  background: url("../img/background.jpg") no-repeat fixed center;
+  background-size: cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 8px 0 0 8px;
+    background: inherit;
+    filter: blur(3px);
+  }
+
+  .slider {
+    position: relative;
+    width: fit-content;
+    height: min-content;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.3);
+    background: inherit;
+
+    &__menu {
+      width: 200px;
+      background: inherit;
+      position: relative;
+      border-radius: 8px 0 0 8px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 8px 0 0 8px;
+        background: inherit;
+        filter: brightness(60%);
+      }
+
+      &-image {
+        position: relative;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        padding: 35px 0 0;
+
+        img {
+          display: block;
+          width: 64px;
+          height: 64px;
+        }
+      }
+
+      &-items {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px 40px;
+
+        .slider__menu-item {
+          margin: 0 0 16px;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            button {
+              color: #ecebea;
+
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+
+          &.slider__menu-item_active {
+            button {
+              color: #ecebea;
+
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+
+          button {
+            position: relative;
+            text-transform: uppercase;
+            text-align: left;
+            font-size: 16px;
+            color: #dddbd9;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              height: 1.5px;
+              width: 0;
+              background: #ecebea;
+              transition: all 0.3s;
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      width: 450px;
+      background: #ecebea;
+      border-radius: 0 8px 8px 0;
+
+      .slider__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        background: #dddbd9;
+        border-bottom: 3px solid #1888e9;
+        border-radius: 0 8px 0 0;
+
+        &-title {
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 200;
+          font-size: 20px;
+          color: #625d5a;
+        }
+      }
+
+      &-block {
+        padding: 30px 16px 50px;
+
+        .slider__slides {
+          margin: 0 0 40px;
+
+          .slider__slide {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 16px;
+
+            &:last-child {
+              margin: 0;
+            }
+
+            label {
+              color: #625d5a;
+              font-size: 14px;
+              text-transform: uppercase;
+              margin: 0 0 10px;
+            }
+
+            input[type="range"] {
+              width: 90%;
+              margin: 0 auto;
+            }
+          }
+        }
+
+        .slider__example {
+          padding: 10px 8px;
+          border: 1px solid #1888e9;
+          border-radius: 8px;
+
+          &-text {
+            font-size: 14px;
+            color: #625d5a;
+          }
+        }
+      }
+    }
+  }
+}
