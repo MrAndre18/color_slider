@@ -51,6 +51,16 @@ button {
     box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.3);
     background: inherit;
 
+    &__draggable-helper {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      height: 30px;
+      width: 100%;
+      cursor: move;
+    }
+
     &__menu {
       width: 200px;
       background: inherit;
@@ -168,28 +178,59 @@ button {
       &-block {
         padding: 30px 16px 50px;
 
+        .slider__content-title {
+          color: #625d5a;
+          text-transform: uppercase;
+          font-size: 14px;
+          margin: 0 0 20px;
+        }
+
         .slider__slides {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           margin: 0 0 40px;
 
           .slider__slide {
-            display: flex;
-            flex-direction: column;
-            margin: 0 0 16px;
+            margin: 0 0 32px;
+            width: 90%;
+            height: 12px;
 
             &:last-child {
               margin: 0;
             }
 
-            label {
-              color: #625d5a;
-              font-size: 14px;
-              text-transform: uppercase;
-              margin: 0 0 10px;
+            &_red {
+              background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(255, 0, 0, 1) 100%
+              );
             }
 
-            input[type="range"] {
-              width: 90%;
-              margin: 0 auto;
+            &_green {
+              background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 255, 0, 1) 100%
+              );
+            }
+
+            &_blue {
+              background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 255, 1) 100%
+              );
+            }
+
+            &-handle {
+              background: #ecebea;
+              width: 25px;
+              height: 25px;
+              top: calc(((25px - 12px) / 2) * (-1));
+              border-radius: 50%;
+              box-shadow: 2px 1px 3px 1px rgba(0, 0, 0, 0.2);
             }
           }
         }
@@ -197,11 +238,12 @@ button {
         .slider__example {
           padding: 10px 8px;
           border: 1px solid #1888e9;
+          background: rgb(236, 235, 234);
+          color: rgb(98, 93, 90);
           border-radius: 8px;
 
           &-text {
             font-size: 14px;
-            color: #625d5a;
           }
         }
       }

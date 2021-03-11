@@ -43,7 +43,6 @@ button {
 .main .slider {
   position: relative;
   width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   height: -webkit-min-content;
   height: min-content;
@@ -51,6 +50,15 @@ button {
   border-radius: 8px;
   box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.3);
   background: inherit;
+}
+.main .slider__draggable-helper {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+  cursor: move;
 }
 .main .slider__menu {
   width: 200px;
@@ -151,33 +159,50 @@ button {
 .main .slider__content-block {
   padding: 30px 16px 50px;
 }
+.main .slider__content-block .slider__content-title {
+  color: #625d5a;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
 .main .slider__content-block .slider__slides {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 0 40px;
 }
 .main .slider__content-block .slider__slides .slider__slide {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 16px;
+  margin: 0 0 32px;
+  width: 90%;
+  height: 12px;
 }
 .main .slider__content-block .slider__slides .slider__slide:last-child {
   margin: 0;
 }
-.main .slider__content-block .slider__slides .slider__slide label {
-  color: #625d5a;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 0 0 10px;
+.main .slider__content-block .slider__slides .slider__slide_red {
+  background: linear-gradient(90deg, #000000 0%, #ff0000 100%);
 }
-.main .slider__content-block .slider__slides .slider__slide input[type="range"] {
-  width: 90%;
-  margin: 0 auto;
+.main .slider__content-block .slider__slides .slider__slide_green {
+  background: linear-gradient(90deg, #000000 0%, #00ff00 100%);
+}
+.main .slider__content-block .slider__slides .slider__slide_blue {
+  background: linear-gradient(90deg, #000000 0%, #0000ff 100%);
+}
+.main .slider__content-block .slider__slides .slider__slide-handle {
+  background: #ecebea;
+  width: 25px;
+  height: 25px;
+  top: calc(((25px - 12px) / 2) * -1);
+  border-radius: 50%;
+  box-shadow: 2px 1px 3px 1px rgba(0, 0, 0, 0.2);
 }
 .main .slider__content-block .slider__example {
   padding: 10px 8px;
   border: 1px solid #1888e9;
+  background: #ecebea;
+  color: #625d5a;
   border-radius: 8px;
 }
 .main .slider__content-block .slider__example-text {
   font-size: 14px;
-  color: #625d5a;
 }

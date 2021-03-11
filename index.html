@@ -23,15 +23,17 @@
     <section class="main">
       <div class="slider">
 
+        <div class="slider__draggable-helper"></div>
+
         <div class="slider__menu">
           <div class="slider__menu-image">
             <img src="./img/logo.svg" alt="Color Slider App logo" />
           </div>
           <ul class="slider__menu-items">
-            <li class="slider__menu-item slider__menu-item_active">
+            <li class="slider__menu-item slider__menu-item_active" data-type="color" data-value="">
               <button>Text</button>
             </li>
-            <li class="slider__menu-item">
+            <li class="slider__menu-item" data-type="background-color" data-value="">
               <button>Background</button>
             </li>
           </ul>
@@ -43,20 +45,21 @@
           </div>
 
           <div class="slider__content-block">
+
+            <p class="slider__content-title">Set color value using sliders</p>
+
             <ul class="slider__slides">
-              <li class="slider__slide">
-                <label for="red">Red</label>
-                <input id="red" type="range" min="0" max="255" value="0" />
+              <li class="slider__slide slider__slide_red">
+                <div class="slider__slide-handle ui-slider-handle"></div>
               </li>
-              <li class="slider__slide">
-                <label for="green">Green</label>
-                <input id="green" type="range" min="0" max="255" value="0" />
+              <li class="slider__slide slider__slide_green">
+                <div class="slider__slide-handle ui-slider-handle"></div>
               </li>
-              <li class="slider__slide">
-                <label for="blue">Blue</label>
-                <input id="blue" type="range" min="0" max="255" value="0" />
+              <li class="slider__slide slider__slide_blue">
+                <div class="slider__slide-handle ui-slider-handle"></div>
               </li>
             </ul>
+
             <div class="slider__example">
               <p class="slider__example-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
